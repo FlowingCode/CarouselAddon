@@ -4,7 +4,7 @@
 
     <groupId>com.flowingcode.addons.carousel</groupId>
     <artifactId>carousel-addon</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Carousel Addon</name>
     <description>Integration of l2t-paper-slider for Vaadin 10</description>
 
@@ -33,7 +33,7 @@
         <url>https://github.com/FlowingCode/CarouselAddon</url>
         <connection>scm:git:git://github.com/FlowingCode/CarouselAddon.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:/FlowingCode/CarouselAddon.git</developerConnection>
-        <tag>carousel-addon-1.0.0</tag>
+        <tag>Carousel add-on for Vaadin</tag>
     </scm>
 	
     <dependencyManagement>
