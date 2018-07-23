@@ -4,7 +4,7 @@ This is a carousel addon, based on the webcomponent: https://www.webcomponents.o
 
 ## Online demo
 
-Try the add-on demo at http://addons.flowingcode.com/carousel
+Try the add-on demo at http://addonsv10.flowingcode.com/carousel
 
 ## Download release
 
