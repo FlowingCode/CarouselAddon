@@ -1,3 +1,5 @@
+[![Build Status](https://jenkins.flowingcode.com/buildStatus/icon?job=Carousel-addon)](https://jenkins.flowingcode.com/job/Carousel-addon)
+
 # Carousel Addon for Vaadin 10
 
 This is a carousel addon, based on the webcomponent: https://www.webcomponents.org/element/Link2Twenty/l2t-paper-slider/elements/l2t-paper-slider
