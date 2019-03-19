@@ -1,5 +1,3 @@
-package com.flowingcode.vaadin.addons.carousel;
-
 /*-
  * #%L
  * Carousel Addon
@@ -19,6 +17,8 @@ package com.flowingcode.vaadin.addons.carousel;
  * limitations under the License.
  * #L%
  */
+package com.flowingcode.vaadin.addons.carousel;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
