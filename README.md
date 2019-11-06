@@ -1,12 +1,12 @@
 [![Build Status](https://jenkins.flowingcode.com/buildStatus/icon?job=Carousel-addon)](https://jenkins.flowingcode.com/job/Carousel-addon)
 
-# Carousel Addon for Vaadin 10
+# Carousel Addon for Vaadin 14+
 
-This is a carousel addon, based on the webcomponent: https://www.webcomponents.org/element/Link2Twenty/l2t-paper-slider/elements/l2t-paper-slider
+This is a carousel addon, based on @xpertsea/paper-slider
 
 ## Online demo
 
-Try the add-on demo at http://addonsv10.flowingcode.com/carousel
+Try the add-on demo at http://addonsv14.flowingcode.com/carousel
 
 ## Download release
 
@@ -40,6 +40,8 @@ To debug project and make code modifications on the fly in the server-side, righ
  
 ## Release notes
 
+### Version 2.0.0-SNAPSHOT
+- First release compatible with Vaadin 14 NPM mode
 ### Version 1.0-SNAPSHOT
 - First release of the addon
 

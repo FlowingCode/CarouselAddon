@@ -26,11 +26,15 @@ import com.vaadin.flow.component.DomEvent;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
 
 @SuppressWarnings("serial")
 @Tag("l2t-paper-slider")
 @HtmlImport("bower_components/l2t-paper-slider/l2t-paper-slider.html")
+@NpmPackage(value = "@xpertsea/paper-slider", version = "3.0.0")
+@JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
 	private Slide[] slides;
