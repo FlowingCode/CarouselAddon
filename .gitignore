@@ -4,3 +4,6 @@
 /.settings
 /node_modules
 /webpack.generated.js
+/package.json
+/package-lock.json
+/webpack.config.js

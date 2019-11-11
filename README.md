@@ -1,3 +1,5 @@
+[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/carousel-addon)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/carousel-addon.svg)](https://vaadin.com/directory/component/carousel-addon)
 [![Build Status](https://jenkins.flowingcode.com/buildStatus/icon?job=Carousel-addon)](https://jenkins.flowingcode.com/job/Carousel-addon)
 
 # Carousel Addon for Vaadin 14+
@@ -40,9 +42,9 @@ To debug project and make code modifications on the fly in the server-side, righ
  
 ## Release notes
 
-### Version 2.0.0-SNAPSHOT
+### Version 2.0.0
 - First release compatible with Vaadin 14 NPM mode
-### Version 1.0-SNAPSHOT
+### Version 1.0.0
 - First release of the addon
 
 ## Roadmap
