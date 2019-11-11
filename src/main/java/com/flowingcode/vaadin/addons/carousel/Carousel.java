@@ -37,9 +37,11 @@ import com.vaadin.flow.shared.Registration;
 @JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
+	private static final int DEFAULT_SLIDE_DURATION = 2;
+	
 	private Slide[] slides;
 	private boolean autoProgress;
-	private int slideDuration = 2;
+	private int slideDuration = DEFAULT_SLIDE_DURATION;
 	private int startPosition;
 	private boolean disableSwipe;
 	private boolean hideNavigation;
@@ -65,7 +67,7 @@ public class Carousel extends Component implements HasSize {
 			this.getElement().setAttribute("hide-nav", "true");
 		this.getElement().setAttribute("slide-duration", "" + this.slideDuration);
 		this.getElement().setAttribute("position", "" + this.startPosition);
-	};
+	}
 	
 	// PROPERTIES
 	public Slide[] getSlides() {
@@ -165,14 +167,14 @@ public class Carousel extends Component implements HasSize {
 	 * Move to the next slide
 	 */
 	public void moveNext() {
-		this.getElement().callFunction("moveNext");
+		this.getElement().callJsFunction("moveNext");
 	}
 	
 	/**
 	 * Move to the previous slide
 	 */
 	public void movePrev() {
-		this.getElement().callFunction("movePrev");
+		this.getElement().callJsFunction("movePrev");
 	}
 	
 	/**
@@ -180,12 +182,12 @@ public class Carousel extends Component implements HasSize {
 	 * @param slide
 	 */
 	public void movePos(int slide) {
-		this.getElement().callFunction("movePos", ""+slide);
+		this.getElement().callJsFunction("movePos", ""+slide);
 	}
 
 	// EVENTS
 	@DomEvent("position-changed")
-	static public class SlideChangeEvent extends ComponentEvent<Carousel> {
+	public static class SlideChangeEvent extends ComponentEvent<Carousel> {
 		public SlideChangeEvent(Carousel source, boolean fromClient) {
 			super(source, true);
 		}
