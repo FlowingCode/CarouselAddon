@@ -17,19 +17,24 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.carousel;
+package com.flowingcode.vaadin.addons.carousel.test;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import org.junit.Test;
+
+import com.flowingcode.vaadin.addons.DemoLayout;
+import com.flowingcode.vaadin.addons.carousel.CarouselDemoView;
 import com.vaadin.flow.router.Route;
 
-@SuppressWarnings("serial")
-@Route("")
-public class DemoView extends VerticalLayout implements BeforeEnterObserver {
+public class LayoutTest {
 
-	@Override
-	public void beforeEnter(BeforeEnterEvent event) {
-		event.forwardTo(CarouselDemoView.class);
+	@Test
+	public void testDemoLayout() {
+		Route route = CarouselDemoView.class.getAnnotation(Route.class);
+		assertEquals("com.flowingcode.vaadin.addons.DemoLayout",DemoLayout.class.getName());
+		assertEquals(DemoLayout.class, route.layout());
+		assertNotEquals("", route.value());
 	}
 }
