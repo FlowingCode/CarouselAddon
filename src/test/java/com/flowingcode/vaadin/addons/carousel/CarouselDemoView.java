@@ -20,12 +20,14 @@
 package com.flowingcode.vaadin.addons.carousel;
 
 import com.flowingcode.vaadin.addons.DemoLayout;
+import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.impl.TabbedDemoImpl;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
 @Route(value = "carousel", layout = DemoLayout.class)
+@GithubLink("https://github.com/FlowingCode/CarouselAddon")
 public class CarouselDemoView extends VerticalLayout {
 
 	private static final String LISTENER_DEMO = "Slide Listener";
