@@ -22,13 +22,12 @@ package com.flowingcode.vaadin.addons.carousel;
 import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
 @SuppressWarnings("serial")
 @Route(value = "carousel", layout = DemoLayout.class)
 @GithubLink("https://github.com/FlowingCode/CarouselAddon")
-public class CarouselDemoView extends VerticalLayout {
+public class CarouselDemoView extends TabbedDemo {
 
 	private static final String LISTENER_DEMO = "Slide Listener";
 	private static final String AUTOPROGRESS_DEMO = "Auto Progress";
@@ -38,11 +37,9 @@ public class CarouselDemoView extends VerticalLayout {
 	private static final String BUTTONS_SOURCE = "https://github.com/FlowingCode/CarouselAddon/blob/master/src/test/java/com/flowingcode/vaadin/addons/carousel/SlideButtonsDemo.java";
 
 	public CarouselDemoView() {
-		TabbedDemo demo = new TabbedDemo();
-		demo.addDemo(new ListenerDemo(), LISTENER_DEMO, LISTENER_SOURCE);
-		demo.addDemo(new AutoProgressDemo(), AUTOPROGRESS_DEMO, AUTPROGRESS_SOURCE);
-		demo.addDemo(new SlideButtonsDemo(), BUTTONS_DEMO, BUTTONS_SOURCE);
-		add(demo);
+		addDemo(new ListenerDemo(), LISTENER_DEMO, LISTENER_SOURCE);
+		addDemo(new AutoProgressDemo(), AUTOPROGRESS_DEMO, AUTPROGRESS_SOURCE);
+		addDemo(new SlideButtonsDemo(), BUTTONS_DEMO, BUTTONS_SOURCE);
 		setSizeFull();
 	}
 }
