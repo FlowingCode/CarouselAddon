@@ -21,7 +21,7 @@ package com.flowingcode.vaadin.addons.carousel;
 
 import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
-import com.flowingcode.vaadin.addons.demo.impl.TabbedDemoImpl;
+import com.flowingcode.vaadin.addons.demo.TabbedDemo;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
@@ -38,11 +38,11 @@ public class CarouselDemoView extends VerticalLayout {
 	private static final String BUTTONS_SOURCE = "https://github.com/FlowingCode/CarouselAddon/blob/master/src/test/java/com/flowingcode/vaadin/addons/carousel/SlideButtonsDemo.java";
 
 	public CarouselDemoView() {
-		TabbedDemoImpl<ListenerDemo> carouselDemo = new TabbedDemoImpl<>(new ListenerDemo(), LISTENER_DEMO,
-				LISTENER_SOURCE);
-		carouselDemo.addDemo(new AutoProgressDemo(), AUTOPROGRESS_DEMO, AUTPROGRESS_SOURCE);
-		carouselDemo.addDemo(new SlideButtonsDemo(), BUTTONS_DEMO, BUTTONS_SOURCE);
-		add(carouselDemo);
+		TabbedDemo demo = new TabbedDemo();
+		demo.addDemo(new ListenerDemo(), LISTENER_DEMO, LISTENER_SOURCE);
+		demo.addDemo(new AutoProgressDemo(), AUTOPROGRESS_DEMO, AUTPROGRESS_SOURCE);
+		demo.addDemo(new SlideButtonsDemo(), BUTTONS_DEMO, BUTTONS_SOURCE);
+		add(demo);
 		setSizeFull();
 	}
 }
