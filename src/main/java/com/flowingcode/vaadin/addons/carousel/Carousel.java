@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -37,166 +37,156 @@ import com.vaadin.flow.shared.Registration;
 @JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
-	private static final int DEFAULT_SLIDE_DURATION = 2;
-	
-	private Slide[] slides;
-	private boolean autoProgress;
-	private int slideDuration = DEFAULT_SLIDE_DURATION;
-	private int startPosition;
-	private boolean disableSwipe;
-	private boolean hideNavigation;
+  private static final int DEFAULT_SLIDE_DURATION = 2;
 
-	public Carousel(Slide... paperSlides) {
-		this.setSlides(paperSlides);
-		updateSlides(paperSlides);
-	}
+  private Slide[] slides;
+  private boolean autoProgress;
+  private int slideDuration = DEFAULT_SLIDE_DURATION;
+  private int startPosition;
+  private boolean disableSwipe;
+  private boolean hideNavigation;
 
-	private void updateSlides(Slide... paperSlides) {
-		for (Slide slide : paperSlides) {
-			this.getElement().appendChild(slide.getElement());
-		}
-		updateProperties();
-	}
+  public Carousel(Slide... paperSlides) {
+    this.setSlides(paperSlides);
+    updateSlides(paperSlides);
+  }
 
-	private void updateProperties() {
-		if (autoProgress)
-			this.getElement().setAttribute("auto-progress", "true");
-		if (disableSwipe)
-			this.getElement().setAttribute("disable-swipe", "true");
-		if (hideNavigation)
-			this.getElement().setAttribute("hide-nav", "true");
-		this.getElement().setAttribute("slide-duration", "" + this.slideDuration);
-		this.getElement().setAttribute("position", "" + this.startPosition);
-	}
-	
-	// PROPERTIES
-	public Slide[] getSlides() {
-		return slides;
-	}
+  private void updateSlides(Slide... paperSlides) {
+    for (Slide slide : paperSlides) {
+      this.getElement().appendChild(slide.getElement());
+    }
+    updateProperties();
+  }
 
-	public void setSlides(Slide[] slides) {
-		this.slides = slides;
-		updateSlides(slides);
-	}
+  private void updateProperties() {
+    if (autoProgress) this.getElement().setAttribute("auto-progress", "true");
+    if (disableSwipe) this.getElement().setAttribute("disable-swipe", "true");
+    if (hideNavigation) this.getElement().setAttribute("hide-nav", "true");
+    this.getElement().setAttribute("slide-duration", "" + this.slideDuration);
+    this.getElement().setAttribute("position", "" + this.startPosition);
+  }
 
-	public boolean isAutoProgress() {
-		return autoProgress;
-	}
+  // PROPERTIES
+  public Slide[] getSlides() {
+    return slides;
+  }
 
-	public void setAutoProgress(boolean autoProgress) {
-		this.autoProgress = autoProgress;
-	}
+  public void setSlides(Slide[] slides) {
+    this.slides = slides;
+    updateSlides(slides);
+  }
 
-	public int getSlideDuration() {
-		return slideDuration;
-	}
+  public boolean isAutoProgress() {
+    return autoProgress;
+  }
 
-	public void setSlideDuration(int slideDuration) {
-		this.slideDuration = slideDuration;
-	}
+  public void setAutoProgress(boolean autoProgress) {
+    this.autoProgress = autoProgress;
+  }
 
-	public int getStartPosition() {
-		return startPosition;
-	}
+  public int getSlideDuration() {
+    return slideDuration;
+  }
 
-	public void setStartPosition(int startPosition) {
-		this.startPosition = startPosition;
-	}
+  public void setSlideDuration(int slideDuration) {
+    this.slideDuration = slideDuration;
+  }
 
-	public boolean isDisableSwipe() {
-		return disableSwipe;
-	}
+  public int getStartPosition() {
+    return startPosition;
+  }
 
-	public void setDisableSwipe(boolean disableSwipe) {
-		this.disableSwipe = disableSwipe;
-	}
+  public void setStartPosition(int startPosition) {
+    this.startPosition = startPosition;
+  }
 
-	public boolean isHideNavigation() {
-		return hideNavigation;
-	}
+  public boolean isDisableSwipe() {
+    return disableSwipe;
+  }
 
-	public void setHideNavigation(boolean hideNavigation) {
-		this.hideNavigation = hideNavigation;
-	}
+  public void setDisableSwipe(boolean disableSwipe) {
+    this.disableSwipe = disableSwipe;
+  }
 
-	// FLUENT API
-	public Carousel withAutoProgress() {
-		this.autoProgress = true;
-		updateProperties();
-		return this;
-	}
+  public boolean isHideNavigation() {
+    return hideNavigation;
+  }
 
-	public Carousel withoutSwipe() {
-		this.disableSwipe = true;
-		updateProperties();
-		return this;
-	}
+  public void setHideNavigation(boolean hideNavigation) {
+    this.hideNavigation = hideNavigation;
+  }
 
-	public Carousel withoutNavigation() {
-		this.hideNavigation = true;
-		updateProperties();
-		return this;
-	}
+  // FLUENT API
+  public Carousel withAutoProgress() {
+    this.autoProgress = true;
+    updateProperties();
+    return this;
+  }
 
-	public Carousel withSlideDuration(int slideDuration) {
-		this.slideDuration = slideDuration;
-		updateProperties();
-		return this;
-	}
+  public Carousel withoutSwipe() {
+    this.disableSwipe = true;
+    updateProperties();
+    return this;
+  }
 
-	public Carousel withStartPosition(int startPosition) {
-		this.startPosition = startPosition;
-		updateProperties();
-		return this;
-	}
+  public Carousel withoutNavigation() {
+    this.hideNavigation = true;
+    updateProperties();
+    return this;
+  }
 
+  public Carousel withSlideDuration(int slideDuration) {
+    this.slideDuration = slideDuration;
+    updateProperties();
+    return this;
+  }
 
-	// SIZING
-	@Override
-	public void setHeight(String height) {
-		getElement().getStyle().set("--paper-slide-height", height);
-	}
+  public Carousel withStartPosition(int startPosition) {
+    this.startPosition = startPosition;
+    updateProperties();
+    return this;
+  }
 
-	@Override
-	public String getHeight() {
-		return getElement().getStyle().get("--paper-slide-height");
-	}
-	
-	// METHODS
-	/**
-	 * Move to the next slide
-	 */
-	public void moveNext() {
-		this.getElement().callJsFunction("moveNext");
-	}
-	
-	/**
-	 * Move to the previous slide
-	 */
-	public void movePrev() {
-		this.getElement().callJsFunction("movePrev");
-	}
-	
-	/**
-	 * Move to a specific slide
-	 * @param slide
-	 */
-	public void movePos(int slide) {
-		this.getElement().callJsFunction("movePos", ""+slide);
-	}
+  // SIZING
+  @Override
+  public void setHeight(String height) {
+    getElement().getStyle().set("--paper-slide-height", height);
+  }
 
-	// EVENTS
-	@DomEvent("position-changed")
-	public static class SlideChangeEvent extends ComponentEvent<Carousel> {
-		public SlideChangeEvent(Carousel source, boolean fromClient) {
-			super(source, true);
-		}
-	}
+  @Override
+  public String getHeight() {
+    return getElement().getStyle().get("--paper-slide-height");
+  }
 
-	public Registration addChangeListener(ComponentEventListener<SlideChangeEvent> listener) {
-		return addListener(SlideChangeEvent.class, listener);
-	}
-	
-	
+  // METHODS
+  /** Move to the next slide */
+  public void moveNext() {
+    this.getElement().callJsFunction("moveNext");
+  }
 
+  /** Move to the previous slide */
+  public void movePrev() {
+    this.getElement().callJsFunction("movePrev");
+  }
+
+  /**
+   * Move to a specific slide
+   *
+   * @param slide
+   */
+  public void movePos(int slide) {
+    this.getElement().callJsFunction("movePos", "" + slide);
+  }
+
+  // EVENTS
+  @DomEvent("position-changed")
+  public static class SlideChangeEvent extends ComponentEvent<Carousel> {
+    public SlideChangeEvent(Carousel source, boolean fromClient) {
+      super(source, true);
+    }
+  }
+
+  public Registration addChangeListener(ComponentEventListener<SlideChangeEvent> listener) {
+    return addListener(SlideChangeEvent.class, listener);
+  }
 }
