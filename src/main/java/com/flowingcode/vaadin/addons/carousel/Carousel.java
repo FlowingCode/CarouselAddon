@@ -23,6 +23,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.DomEvent;
+import com.vaadin.flow.component.EventData;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
@@ -181,8 +182,15 @@ public class Carousel extends Component implements HasSize {
   // EVENTS
   @DomEvent("position-changed")
   public static class SlideChangeEvent extends ComponentEvent<Carousel> {
-    public SlideChangeEvent(Carousel source, boolean fromClient) {
+    private String position;
+
+    public SlideChangeEvent(
+        Carousel source, boolean fromClient, @EventData("event.detail.value") String position) {
       super(source, true);
+    }
+
+    public String getPosition() {
+      return position;
     }
   }
 
