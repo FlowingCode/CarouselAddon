@@ -4,7 +4,7 @@
 
 # Carousel Addon for Vaadin 14+
 
-This is a carousel addon, based on @xpertsea/paper-slider
+This is a carousel addon, based on `l2t-paper-slider` (from @xpertsea/paper-slider)
 
 ## Online demo
 
