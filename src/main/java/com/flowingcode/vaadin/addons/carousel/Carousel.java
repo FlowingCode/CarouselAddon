@@ -186,7 +186,7 @@ public class Carousel extends Component implements HasSize {
 
     public SlideChangeEvent(
         Carousel source, boolean fromClient, @EventData("event.detail.value") String position) {
-      super(source, true);
+      super(source, fromClient);
       this.position = position;
     }
 
