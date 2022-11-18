@@ -19,10 +19,16 @@
  */
 package com.flowingcode.vaadin.addons.carousel;
 
+import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
+@PageTitle("Auto Progress")
+@DemoSource
+@Route(value = "carousel/auto-progress", layout = CarouselDemoView.class)
 @SuppressWarnings("serial")
 public class AutoProgressDemo extends VerticalLayout {
 
