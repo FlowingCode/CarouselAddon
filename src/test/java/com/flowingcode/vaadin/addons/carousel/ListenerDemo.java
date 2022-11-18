@@ -19,12 +19,18 @@
  */
 package com.flowingcode.vaadin.addons.carousel;
 
+import com.flowingcode.vaadin.addons.demo.DemoSource;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.Notification.Position;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
+@PageTitle("Slide Listener")
+@DemoSource
+@Route(value = "carousel/slide-listener", layout = CarouselDemoView.class)
 @SuppressWarnings("serial")
 public class ListenerDemo extends VerticalLayout {
 
