@@ -31,6 +31,12 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
 
+/**
+ * A component that displays a slideshow of slides.
+ * By default the slides will be displayed with navigation buttons, autoplay and swipe enabled.
+ * You can configure the slideshow by adding custom parameters, such as duration of transition,
+ * start position, maximum height and disabling swipe.
+ */
 @SuppressWarnings("serial")
 @Tag("l2t-paper-slider")
 @HtmlImport("bower_components/l2t-paper-slider/l2t-paper-slider.html")
