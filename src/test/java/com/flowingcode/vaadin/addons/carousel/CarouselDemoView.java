@@ -22,6 +22,8 @@ package com.flowingcode.vaadin.addons.carousel;
 import com.flowingcode.vaadin.addons.DemoLayout;
 import com.flowingcode.vaadin.addons.GithubLink;
 import com.flowingcode.vaadin.addons.demo.TabbedDemo;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
 
@@ -36,5 +38,16 @@ public class CarouselDemoView extends TabbedDemo {
     addDemo(AutoProgressDemo.class);
     addDemo(SlideButtonsDemo.class);
     setSizeFull();
+  }
+  
+  public static Component createSlideContent(String string, String image) {
+	Div result = new Div();
+	result.getStyle().set("width", "auto");
+	result.getStyle().set("height", "100%");
+	result.getStyle().set("background-image", "url('" + image + "')");
+	result.getStyle().set("background-size", "cover");
+	result.getStyle().set("background-repeat", "no-repeat");
+	result.getStyle().set("background-position", "50% 50%");
+    return result;
   }
 }

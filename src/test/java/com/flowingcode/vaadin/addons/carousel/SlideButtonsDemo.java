@@ -37,10 +37,11 @@ import com.vaadin.flow.router.Route;
 public class SlideButtonsDemo extends VerticalLayout {
 
   public SlideButtonsDemo() {
-    Slide s1 = new Slide(createSlideContent("Slide 1", "green"));
-    Slide s2 = new Slide(createSlideContent("Slide 2", "blue"));
-    Slide s3 = new Slide(createSlideContent("Slide 3", "red"));
-    Slide s4 = new Slide(createSlideContent("Slide 4", "yellow"));
+    Slide s1 = new Slide(CarouselDemoView.createSlideContent("Slide 1", "https://www.flowingcode.com/wp-content/uploads/2018/04/birthday-3021071_640.jpg"));
+    Slide s2 = new Slide(CarouselDemoView.createSlideContent("Slide 2", "https://2.bp.blogspot.com/-nvtIfgN8duc/XKUQh9VEyFI/AAAAAAAABT8/mE7P45E2uqwWlkKimAmes7fT2rdW9UDWwCEwYBhgL/s320/anniversary_1.jpg"));
+    Slide s3 = new Slide(CarouselDemoView.createSlideContent("Slide 3", "https://www.flowingcode.com/wp-content/uploads/2020/04/photo4blog-300x300.jpg"));
+    Slide s4 = new Slide(CarouselDemoView.createSlideContent("Slide 4", "https://www.flowingcode.com/wp-content/uploads/2021/03/happy_birthday_2.jpg"));
+
 
     final Carousel cf = new Carousel(s1, s2, s3, s4).withoutNavigation();
     cf.setSizeFull();
@@ -61,14 +62,4 @@ public class SlideButtonsDemo extends VerticalLayout {
     add(cf, btns);
   }
 
-  private Component createSlideContent(String string, String color) {
-    H1 label = new H1(string);
-    label.getStyle().set("margin-top", "auto");
-    label.getStyle().set("margin-bottom", "auto");
-    VerticalLayout d = new VerticalLayout(label);
-    d.setAlignItems(Alignment.CENTER);
-    d.setSizeFull();
-    d.getStyle().set("background-color", color);
-    return d;
-  }
 }
