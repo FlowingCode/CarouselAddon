@@ -44,33 +44,33 @@ import com.vaadin.flow.shared.Registration;
 @JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
+  private static final String HIDE_NAV = "hide-nav";
+  private static final String DISABLE_SWIPE = "disable-swipe";
+  private static final String POSITION = "position";
+  private static final String SLIDE_DURATION = "slide-duration";
+  private static final String AUTO_PROGRESS = "auto-progress";
   private static final int DEFAULT_SLIDE_DURATION = 2;
 
   private Slide[] slides;
-  private boolean autoProgress;
-  private int slideDuration = DEFAULT_SLIDE_DURATION;
-  private int startPosition;
-  private boolean disableSwipe;
-  private boolean hideNavigation;
 
   public Carousel(Slide... paperSlides) {
     this.setSlides(paperSlides);
     updateSlides(paperSlides);
+    initProperties();
   }
 
   private void updateSlides(Slide... paperSlides) {
     for (Slide slide : paperSlides) {
       this.getElement().appendChild(slide.getElement());
     }
-    updateProperties();
   }
 
-  private void updateProperties() {
-    if (autoProgress) this.getElement().setAttribute("auto-progress", "true");
-    if (disableSwipe) this.getElement().setAttribute("disable-swipe", "true");
-    if (hideNavigation) this.getElement().setAttribute("hide-nav", "true");
-    this.getElement().setAttribute("slide-duration", "" + this.slideDuration);
-    this.getElement().setAttribute("position", "" + this.startPosition);
+  private void initProperties() {
+    this.setAutoProgress(false);
+    this.setSlideDuration(DEFAULT_SLIDE_DURATION);
+    this.setStartPosition(0);
+    this.setDisableSwipe(false);
+    this.setHideNavigation(false);
   }
 
   // PROPERTIES
@@ -84,73 +84,68 @@ public class Carousel extends Component implements HasSize {
   }
 
   public boolean isAutoProgress() {
-    return autoProgress;
+    return this.getElement().getProperty(AUTO_PROGRESS, false);
   }
 
   public void setAutoProgress(boolean autoProgress) {
-    this.autoProgress = autoProgress;
+    this.getElement().setAttribute(AUTO_PROGRESS, autoProgress);
   }
 
   public int getSlideDuration() {
-    return slideDuration;
+	return this.getElement().getProperty(SLIDE_DURATION, 0);
   }
 
   public void setSlideDuration(int slideDuration) {
-    this.slideDuration = slideDuration;
+	this.getElement().setProperty(SLIDE_DURATION, slideDuration);
   }
 
   public int getStartPosition() {
-    return startPosition;
+    return this.getElement().getProperty(POSITION, 0);
   }
 
   public void setStartPosition(int startPosition) {
-    this.startPosition = startPosition;
+	this.getElement().setAttribute(POSITION, "" + startPosition);
   }
 
   public boolean isDisableSwipe() {
-    return disableSwipe;
+    return this.getElement().getProperty(DISABLE_SWIPE, false);
   }
 
   public void setDisableSwipe(boolean disableSwipe) {
-    this.disableSwipe = disableSwipe;
+	this.getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
   }
 
   public boolean isHideNavigation() {
-    return hideNavigation;
+    return this.getElement().getProperty(HIDE_NAV, false);
   }
 
   public void setHideNavigation(boolean hideNavigation) {
-    this.hideNavigation = hideNavigation;
+	this.getElement().setAttribute(HIDE_NAV, hideNavigation);
   }
 
   // FLUENT API
   public Carousel withAutoProgress() {
-    this.autoProgress = true;
-    updateProperties();
+    this.setAutoProgress(true);
     return this;
   }
 
   public Carousel withoutSwipe() {
-    this.disableSwipe = true;
-    updateProperties();
+    this.setDisableSwipe(true);
     return this;
   }
 
   public Carousel withoutNavigation() {
-    this.hideNavigation = true;
-    updateProperties();
+    this.setHideNavigation(false);
     return this;
   }
 
   public Carousel withSlideDuration(int slideDuration) {
-    this.slideDuration = slideDuration;
-    updateProperties();
+    this.setSlideDuration(slideDuration);
     return this;
   }
 
   public Carousel withStartPosition(int startPosition) {
-    this.startPosition = startPosition;
-    updateProperties();
+    this.setStartPosition(startPosition);
     return this;
   }
 
