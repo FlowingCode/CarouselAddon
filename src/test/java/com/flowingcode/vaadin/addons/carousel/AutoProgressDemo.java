@@ -44,8 +44,7 @@ public class AutoProgressDemo extends VerticalLayout {
             .withSlideDuration(2)
             .withStartPosition(1)
             .withoutSwipe();
-    c.setWidth("100%");
-    c.setHeight("180px");
+    c.setSizeFull();
 
     add(c);
   }

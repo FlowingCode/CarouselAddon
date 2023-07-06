@@ -41,8 +41,7 @@ public class ListenerDemo extends VerticalLayout {
     Slide s4 = new Slide(createSlideContent("Slide 4", "yellow"));
 
     Carousel c = new Carousel(s1, s2, s3, s4);
-    c.setWidth("100%");
-    c.setHeight("180px");
+    c.setSizeFull();
     c.addChangeListener(e -> Notification.show("Slide Changed!", 1000, Position.BOTTOM_START));
 
     add(c);

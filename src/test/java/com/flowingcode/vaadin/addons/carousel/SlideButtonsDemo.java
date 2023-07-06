@@ -43,8 +43,7 @@ public class SlideButtonsDemo extends VerticalLayout {
     Slide s4 = new Slide(createSlideContent("Slide 4", "yellow"));
 
     final Carousel cf = new Carousel(s1, s2, s3, s4).withoutNavigation();
-    cf.setWidth("100%");
-    cf.setHeight("180px");
+    cf.setSizeFull();
     Button next = new Button(">>");
     Button prev = new Button("<<");
     Button last = new Button(">|");
