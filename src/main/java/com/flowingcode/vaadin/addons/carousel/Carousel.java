@@ -152,6 +152,7 @@ public class Carousel extends Component implements HasSize {
   // SIZING
   @Override
   public void setHeight(String height) {
+	  HasSize.super.setHeight(height);
     getElement().getStyle().set("--paper-slide-height", height);
   }
 
