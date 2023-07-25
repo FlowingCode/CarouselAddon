@@ -39,15 +39,15 @@ public class CarouselDemoView extends TabbedDemo {
     addDemo(SlideButtonsDemo.class);
     setSizeFull();
   }
-  
+
   public static Component createSlideContent(String string, String image) {
-	Div result = new Div();
-	result.getStyle().set("width", "auto");
-	result.getStyle().set("height", "100%");
-	result.getStyle().set("background-image", "url('" + image + "')");
-	result.getStyle().set("background-size", "cover");
-	result.getStyle().set("background-repeat", "no-repeat");
-	result.getStyle().set("background-position", "50% 50%");
+    Div result = new Div();
+    result.getStyle().set("width", "auto");
+    result.getStyle().set("height", "100%");
+    result.getStyle().set("background-image", "url('" + image + "')");
+    result.getStyle().set("background-size", "cover");
+    result.getStyle().set("background-repeat", "no-repeat");
+    result.getStyle().set("background-position", "50% 50%");
     return result;
   }
 }

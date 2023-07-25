@@ -32,10 +32,9 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
 
 /**
- * A component that displays a slideshow of slides.
- * By default the slides will be displayed with navigation buttons, autoplay and swipe enabled.
- * You can configure the slideshow by adding custom parameters, such as duration of transition,
- * start position, maximum height and disabling swipe.
+ * A component that displays a slideshow of slides. By default the slides will be displayed with
+ * navigation buttons, autoplay and swipe enabled. You can configure the slideshow by adding custom
+ * parameters, such as duration of transition, start position, maximum height and disabling swipe.
  */
 @SuppressWarnings("serial")
 @Tag("l2t-paper-slider")
@@ -92,11 +91,11 @@ public class Carousel extends Component implements HasSize {
   }
 
   public int getSlideDuration() {
-	return this.getElement().getProperty(SLIDE_DURATION, 0);
+    return this.getElement().getProperty(SLIDE_DURATION, 0);
   }
 
   public void setSlideDuration(int slideDuration) {
-	this.getElement().setProperty(SLIDE_DURATION, slideDuration);
+    this.getElement().setProperty(SLIDE_DURATION, slideDuration);
   }
 
   public int getStartPosition() {
@@ -104,7 +103,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setStartPosition(int startPosition) {
-	this.getElement().setAttribute(POSITION, "" + startPosition);
+    this.getElement().setAttribute(POSITION, "" + startPosition);
   }
 
   public boolean isDisableSwipe() {
@@ -112,7 +111,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setDisableSwipe(boolean disableSwipe) {
-	this.getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
+    this.getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
   }
 
   public boolean isHideNavigation() {
@@ -120,7 +119,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setHideNavigation(boolean hideNavigation) {
-	this.getElement().setAttribute(HIDE_NAV, hideNavigation);
+    this.getElement().setAttribute(HIDE_NAV, hideNavigation);
   }
 
   // FLUENT API
@@ -152,7 +151,7 @@ public class Carousel extends Component implements HasSize {
   // SIZING
   @Override
   public void setHeight(String height) {
-	  HasSize.super.setHeight(height);
+    HasSize.super.setHeight(height);
     getElement().getStyle().set("--paper-slide-height", height);
   }
 
