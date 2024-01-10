@@ -8,7 +8,7 @@ This is a carousel addon, based on `l2t-paper-slider` (from @xpertsea/paper-slid
 
 ## Online demo
 
-Try the add-on demo at http://addonsv14.flowingcode.com/carousel
+Try the add-on demo at http://addonsv24.flowingcode.com/carousel
 
 ## Download release
 
