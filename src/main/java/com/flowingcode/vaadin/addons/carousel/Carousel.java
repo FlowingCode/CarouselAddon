@@ -134,7 +134,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public Carousel withoutNavigation() {
-    this.setHideNavigation(false);
+    this.setHideNavigation(true);
     return this;
   }
 
