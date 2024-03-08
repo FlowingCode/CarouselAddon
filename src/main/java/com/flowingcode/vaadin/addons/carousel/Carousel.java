@@ -43,11 +43,11 @@ import com.vaadin.flow.shared.Registration;
 @JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
-  private static final String HIDE_NAV = "hide-nav";
-  private static final String DISABLE_SWIPE = "disable-swipe";
+  private static final String HIDE_NAV = "hideNav";
+  private static final String DISABLE_SWIPE = "disableSwipe";
   private static final String POSITION = "position";
-  private static final String SLIDE_DURATION = "slide-duration";
-  private static final String AUTO_PROGRESS = "auto-progress";
+  private static final String SLIDE_DURATION = "slideDuration";
+  private static final String AUTO_PROGRESS = "autoProgress";
   private static final int DEFAULT_SLIDE_DURATION = 2;
 
   private Slide[] slides;
@@ -87,7 +87,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setAutoProgress(boolean autoProgress) {
-    getElement().setAttribute(AUTO_PROGRESS, autoProgress);
+    getElement().setProperty(AUTO_PROGRESS, autoProgress);
   }
 
   public int getSlideDuration() {
@@ -103,7 +103,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setStartPosition(int startPosition) {
-    getElement().setAttribute(POSITION, "" + startPosition);
+    getElement().setProperty(POSITION, startPosition);
   }
 
   public boolean isDisableSwipe() {
@@ -111,7 +111,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setDisableSwipe(boolean disableSwipe) {
-    getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
+    getElement().setProperty(DISABLE_SWIPE, disableSwipe);
   }
 
   public boolean isHideNavigation() {
@@ -119,7 +119,7 @@ public class Carousel extends Component implements HasSize {
   }
 
   public void setHideNavigation(boolean hideNavigation) {
-    getElement().setAttribute(HIDE_NAV, hideNavigation);
+    getElement().setProperty(HIDE_NAV, hideNavigation);
   }
 
   // FLUENT API
