@@ -53,23 +53,23 @@ public class Carousel extends Component implements HasSize {
   private Slide[] slides;
 
   public Carousel(Slide... paperSlides) {
-    this.setSlides(paperSlides);
+    setSlides(paperSlides);
     updateSlides(paperSlides);
     initProperties();
   }
 
   private void updateSlides(Slide... paperSlides) {
     for (Slide slide : paperSlides) {
-      this.getElement().appendChild(slide.getElement());
+      getElement().appendChild(slide.getElement());
     }
   }
 
   private void initProperties() {
-    this.setAutoProgress(false);
-    this.setSlideDuration(DEFAULT_SLIDE_DURATION);
-    this.setStartPosition(0);
-    this.setDisableSwipe(false);
-    this.setHideNavigation(false);
+    setAutoProgress(false);
+    setSlideDuration(DEFAULT_SLIDE_DURATION);
+    setStartPosition(0);
+    setDisableSwipe(false);
+    setHideNavigation(false);
   }
 
   // PROPERTIES
@@ -83,68 +83,68 @@ public class Carousel extends Component implements HasSize {
   }
 
   public boolean isAutoProgress() {
-    return this.getElement().getProperty(AUTO_PROGRESS, false);
+    return getElement().getProperty(AUTO_PROGRESS, false);
   }
 
   public void setAutoProgress(boolean autoProgress) {
-    this.getElement().setAttribute(AUTO_PROGRESS, autoProgress);
+    getElement().setAttribute(AUTO_PROGRESS, autoProgress);
   }
 
   public int getSlideDuration() {
-    return this.getElement().getProperty(SLIDE_DURATION, 0);
+    return getElement().getProperty(SLIDE_DURATION, 0);
   }
 
   public void setSlideDuration(int slideDuration) {
-    this.getElement().setProperty(SLIDE_DURATION, slideDuration);
+    getElement().setProperty(SLIDE_DURATION, slideDuration);
   }
 
   public int getStartPosition() {
-    return this.getElement().getProperty(POSITION, 0);
+    return getElement().getProperty(POSITION, 0);
   }
 
   public void setStartPosition(int startPosition) {
-    this.getElement().setAttribute(POSITION, "" + startPosition);
+    getElement().setAttribute(POSITION, "" + startPosition);
   }
 
   public boolean isDisableSwipe() {
-    return this.getElement().getProperty(DISABLE_SWIPE, false);
+    return getElement().getProperty(DISABLE_SWIPE, false);
   }
 
   public void setDisableSwipe(boolean disableSwipe) {
-    this.getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
+    getElement().setAttribute(DISABLE_SWIPE, disableSwipe);
   }
 
   public boolean isHideNavigation() {
-    return this.getElement().getProperty(HIDE_NAV, false);
+    return getElement().getProperty(HIDE_NAV, false);
   }
 
   public void setHideNavigation(boolean hideNavigation) {
-    this.getElement().setAttribute(HIDE_NAV, hideNavigation);
+    getElement().setAttribute(HIDE_NAV, hideNavigation);
   }
 
   // FLUENT API
   public Carousel withAutoProgress() {
-    this.setAutoProgress(true);
+    setAutoProgress(true);
     return this;
   }
 
   public Carousel withoutSwipe() {
-    this.setDisableSwipe(true);
+    setDisableSwipe(true);
     return this;
   }
 
   public Carousel withoutNavigation() {
-    this.setHideNavigation(true);
+    setHideNavigation(true);
     return this;
   }
 
   public Carousel withSlideDuration(int slideDuration) {
-    this.setSlideDuration(slideDuration);
+    setSlideDuration(slideDuration);
     return this;
   }
 
   public Carousel withStartPosition(int startPosition) {
-    this.setStartPosition(startPosition);
+    setStartPosition(startPosition);
     return this;
   }
 
@@ -163,12 +163,12 @@ public class Carousel extends Component implements HasSize {
   // METHODS
   /** Move to the next slide */
   public void moveNext() {
-    this.getElement().callJsFunction("moveNext");
+    getElement().callJsFunction("moveNext");
   }
 
   /** Move to the previous slide */
   public void movePrev() {
-    this.getElement().callJsFunction("movePrev");
+    getElement().callJsFunction("movePrev");
   }
 
   /**
@@ -177,7 +177,7 @@ public class Carousel extends Component implements HasSize {
    * @param slide
    */
   public void movePos(int slide) {
-    this.getElement().callJsFunction("movePos", "" + slide);
+    getElement().callJsFunction("movePos", "" + slide);
   }
 
   // EVENTS
