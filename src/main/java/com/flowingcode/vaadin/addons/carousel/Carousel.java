@@ -2,7 +2,7 @@
  * #%L
  * Carousel Addon
  * %%
- * Copyright (C) 2018 - 2021 Flowing Code
+ * Copyright (C) 2018 - 2024 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import com.vaadin.flow.component.DomEvent;
 import com.vaadin.flow.component.EventData;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
@@ -38,9 +37,8 @@ import com.vaadin.flow.shared.Registration;
  */
 @SuppressWarnings("serial")
 @Tag("l2t-paper-slider")
-@HtmlImport("bower_components/l2t-paper-slider/l2t-paper-slider.html")
-@NpmPackage(value = "@xpertsea/paper-slider", version = "3.0.0")
-@JsModule("@xpertsea/paper-slider/l2t-paper-slider.js")
+@NpmPackage(value = "@polymer/iron-a11y-keys-behavior", version = "3.0.1")
+@JsModule("./paper-slider/l2t-paper-slider.js")
 public class Carousel extends Component implements HasSize {
 
   private static final String HIDE_NAV = "hideNav";
