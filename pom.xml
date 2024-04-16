@@ -9,7 +9,7 @@
     <description>Integration of @xpertsea/paper-slider for Vaadin 14+</description>
 
     <properties>
-        <vaadin.version>14.10.3</vaadin.version>
+        <vaadin.version>14.11.8</vaadin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
