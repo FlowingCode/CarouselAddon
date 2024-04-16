@@ -29,7 +29,7 @@ import '@polymer/polymer/polymer-legacy.js';
 import { IronA11yKeysBehavior } from '@polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js';
 import { Polymer as Polymer$0 } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import { addListener } from '@polymer/polymer/lib/utils/gestures.js';
+import { addListener, removeListener } from '@polymer/polymer/lib/utils/gestures.js';
 
 /**
 * Polymer element for displaying slides in a carousel.
@@ -656,5 +656,10 @@ Polymer$0({
     addListener(this.$.container, 'track', e => this._swipeHandler(e));
     this.setScrollDirection('y', this.$.container);
   },
-
+  
+  detached: function() {
+	  this.autoProgress = false;
+	  removeListener(this.$.container, 'track', e => this._swipeHandler(e));
+  },
+  
 });
