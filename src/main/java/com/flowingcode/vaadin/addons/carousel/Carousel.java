@@ -52,7 +52,6 @@ public class Carousel extends Component implements HasSize {
 
   public Carousel(Slide... paperSlides) {
     setSlides(paperSlides);
-    updateSlides(paperSlides);
     initProperties();
   }
 
