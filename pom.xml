@@ -4,7 +4,7 @@
 
     <groupId>com.flowingcode.addons.carousel</groupId>
     <artifactId>carousel-addon</artifactId>
-    <version>2.1.5-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <name>Carousel Addon</name>
     <description>Integration of @xpertsea/paper-slider for Vaadin 14+</description>
 

@@ -37,6 +37,7 @@ public class CarouselDemoView extends TabbedDemo {
     addDemo(ListenerDemo.class);
     addDemo(AutoProgressDemo.class);
     addDemo(SlideButtonsDemo.class);
+    addDemo(CustomThemeDemo.class);
     setSizeFull();
   }
 
