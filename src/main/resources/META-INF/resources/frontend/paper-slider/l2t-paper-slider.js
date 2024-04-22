@@ -86,7 +86,6 @@ Polymer$0({
         display: box;
         display: -webkit-box;
         white-space: nowrap;
-        @apply --paper-slider-styles;
       }
 
       .slider__slides {
@@ -115,7 +114,6 @@ Polymer$0({
         left: 50%;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-        @apply --paper-slider-dot-container-styles;
       }
 
       *[hidden] {
@@ -131,7 +129,6 @@ Polymer$0({
         background: var(--paper-slide-dot, rgba(255, 255, 255, .5));
         border-radius: 8px;
         cursor: pointer;
-        @apply --paper-slide-dot-styles;
       }
 
       .slider__dot:focus {

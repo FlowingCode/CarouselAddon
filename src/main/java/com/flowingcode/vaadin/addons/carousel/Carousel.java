@@ -25,6 +25,7 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.DomEvent;
 import com.vaadin.flow.component.EventData;
 import com.vaadin.flow.component.HasSize;
+import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
@@ -36,10 +37,10 @@ import com.vaadin.flow.shared.Registration;
  * parameters, such as duration of transition, start position, maximum height and disabling swipe.
  */
 @SuppressWarnings("serial")
-@Tag("l2t-paper-slider")
+@Tag("fc-l2t-paper-slider")
 @NpmPackage(value = "@polymer/iron-a11y-keys-behavior", version = "3.0.1")
-@JsModule("./paper-slider/l2t-paper-slider.js")
-public class Carousel extends Component implements HasSize {
+@JsModule("./paper-slider/fc-l2t-paper-slider.js")
+public class Carousel extends Component implements HasSize, HasTheme {
 
   private static final String HIDE_NAV = "hideNav";
   private static final String DISABLE_SWIPE = "disableSwipe";
