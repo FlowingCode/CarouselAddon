@@ -27,7 +27,7 @@ import com.vaadin.flow.router.Route;
 
 @PageTitle("Styling")
 @DemoSource
-@DemoSource("src/test/resources/META-INF/resources/frontend/carousel-demo-styles.css")
+@DemoSource("/src/test/resources/META-INF/resources/frontend/carousel-demo-styles.css")
 @Route(value = "carousel/custom-theme", layout = CarouselDemoView.class)
 @SuppressWarnings("serial")
 @CssImport(value = "./carousel-demo-styles.css", themeFor = "fc-l2t-paper-slider")
