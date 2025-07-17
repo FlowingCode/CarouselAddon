@@ -180,7 +180,7 @@ Polymer$0({
       <div role="menubar" hidden\$="[[hideNav]]" class="slider__dots">
         <span class="slider__indicator"></span>
         <template is="dom-repeat" items="[[_totalDots]]">
-          <span tabindex="0" role="menuitemradio" aria-checked="false" class="slider__dot" aria-posinset\$="[[item]]"></span>
+          <span tabindex="0" role="menuitemradio" aria-checked="false" class="slider__dot" aria-posinset\$="[[_increment(item)]]"></span>
         </template>
       </div>
     </div>
@@ -461,7 +461,7 @@ Polymer$0({
       var sliderElem = this.$.container,
         indicatorElem = sliderElem.querySelector('.slider__indicator'),
         currentPos = parseInt(sliderElem.getAttribute('data-pos')),
-        newPos = parseInt(dotElem.getAttribute('aria-posinset')),
+        newPos = parseInt(dotElem.getAttribute('aria-posinset')) - 1,
         newDirection = newPos > currentPos ? 'right' : 'left',
         currentDirection = newPos < currentPos ? 'right' : 'left';
       indicatorElem.classList.remove('slider__indicator--' + currentDirection);
@@ -479,9 +479,9 @@ Polymer$0({
     var this$ = this;
     var dotElems = this.$.container.querySelectorAll('.slider__dot'), i;
     for (i = 0; i < this.totalSlides; ++i) {
-      dotElems[i].setAttribute("aria-label", "Slide " + (parseInt(dotElems[i].getAttribute('aria-posinset')) + 1) + " selector");
+      dotElems[i].setAttribute("aria-label", "Slide " + parseInt(dotElems[i].getAttribute('aria-posinset')) + " selector");
       dotElems[i].addEventListener('click', function (e) {
-        this$.movePos(e.target.getAttribute('aria-posinset'));
+        this$.movePos(e.target.getAttribute('aria-posinset') - 1);
       });
     };
     if (this.totalSlides) {
@@ -547,7 +547,7 @@ Polymer$0({
     }
     if (!nextPos)
       return;
-    this.movePos(nextPos);
+    this.movePos(parseInt(nextPos) - 1);
   },
 
   /**
@@ -658,5 +658,9 @@ Polymer$0({
 	  this.autoProgress = false;
 	  removeListener(this.$.container, 'track', e => this._swipeHandler(e));
   },
+  
+  _increment: function(n) {
+      return n+1;
+  }
   
 });
