@@ -4,7 +4,7 @@
 
     <groupId>com.flowingcode.addons.carousel</groupId>
     <artifactId>carousel-addon</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2-SNAPSHOT</version>
     <name>Carousel Addon</name>
     <description>Integration of @xpertsea/paper-slider for Vaadin 14+</description>
 
@@ -34,7 +34,7 @@
         <url>https://github.com/FlowingCode/CarouselAddon</url>
         <connection>scm:git:git://github.com/FlowingCode/CarouselAddon.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:/FlowingCode/CarouselAddon.git</developerConnection>
-        <tag>carousel-addon-3.0.1</tag>
+        <tag>Carousel add-on for Vaadin</tag>
     </scm>
 
     <developers>
