@@ -7,6 +7,10 @@
 
 This is a carousel addon, based on `l2t-paper-slider` (from @xpertsea/paper-slider)
 
+## Supported versions
+
+Supported versions: Vaadin 14-25 (add-on version 3.x)
+
 ## Online demo
 
 Try the add-on demo at http://addonsv24.flowingcode.com/carousel
