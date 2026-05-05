@@ -540,14 +540,13 @@ Polymer$0({
   */
   _spaceCatcher: function (e) {
     e.preventDefault();
-    if (this.shadowRoot != null) {
-      var nextPos = this.shadowRoot.activeElement.getAttribute('aria-posinset');
+    const activeEl = this.shadowRoot && this.shadowRoot.activeElement;
+    if (activeEl) {
+      var nextPos = activeEl.getAttribute('aria-posinset');
+      if (nextPos) this.movePos(parseInt(nextPos) - 1);
     } else {
-      var nextPos = document.activeElement.getAttribute('aria-posinset');
+      this.movePos((this.position + 1) % this.totalSlides);
     }
-    if (!nextPos)
-      return;
-    this.movePos(parseInt(nextPos) - 1);
   },
 
   /**
