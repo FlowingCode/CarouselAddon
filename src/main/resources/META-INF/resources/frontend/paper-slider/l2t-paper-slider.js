@@ -372,7 +372,7 @@ Polymer$0({
   _ariaChecked: function () {
     var dotElems = this.$.container.querySelectorAll('.slider__dot');
     if (dotElems.length > 0) {
-      for (var i = 0; i < this.totalSlides; i++) {
+      for (var i = 0; i < dotElems.length; i++) {
         dotElems[i].setAttribute("aria-checked", "false");
       };
       dotElems[this.position].setAttribute("aria-checked", "true");
@@ -478,13 +478,13 @@ Polymer$0({
   _moveManual: function () {
     var this$ = this;
     var dotElems = this.$.container.querySelectorAll('.slider__dot'), i;
-    for (i = 0; i < this.totalSlides; ++i) {
+    for (i = 0; i < dotElems.length; ++i) {
       dotElems[i].setAttribute("aria-label", "Slide " + parseInt(dotElems[i].getAttribute('aria-posinset')) + " selector");
       dotElems[i].addEventListener('click', function (e) {
         this$.movePos(e.target.getAttribute('aria-posinset') - 1);
       });
     };
-    if (this.totalSlides) {
+    if (dotElems.length) {
       this._dotStyles = window.getComputedStyle(dotElems[0]);
     }
   },
