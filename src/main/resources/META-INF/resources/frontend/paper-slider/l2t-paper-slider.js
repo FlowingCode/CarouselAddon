@@ -480,10 +480,14 @@ Polymer$0({
     var dotElems = this.$.container.querySelectorAll('.slider__dot'), i;
     for (i = 0; i < dotElems.length; ++i) {
       dotElems[i].setAttribute("aria-label", "Slide " + parseInt(dotElems[i].getAttribute('aria-posinset')) + " selector");
-      dotElems[i].addEventListener('click', function (e) {
-        this$.movePos(e.target.getAttribute('aria-posinset') - 1);
-      });
     };
+    if (!this._dotClickListener) {
+      this._dotClickListener = function (e) {
+        const dot = e.target.closest('.slider__dot');
+        if (dot) this$.movePos(Number.parseInt(dot.getAttribute('aria-posinset'), 10) - 1);
+      };
+      this.$.container.addEventListener('click', this._dotClickListener);
+    }
     if (dotElems.length) {
       this._dotStyles = window.getComputedStyle(dotElems[0]);
     }
@@ -656,6 +660,10 @@ Polymer$0({
   detached: function() {
 	  this.autoProgress = false;
 	  removeListener(this.$.container, 'track', e => this._swipeHandler(e));
+	  if (this._dotClickListener) {
+	    this.$.container.removeEventListener('click', this._dotClickListener);
+	    this._dotClickListener = null;
+	  }
   },
   
   _increment: function(n) {
