@@ -542,7 +542,7 @@ Polymer$0({
     e.preventDefault();
     const activeEl = this.shadowRoot && this.shadowRoot.activeElement;
     if (activeEl) {
-      var nextPos = activeEl.getAttribute('aria-posinset');
+      const nextPos = activeEl.getAttribute('aria-posinset');
       if (nextPos) this.movePos(parseInt(nextPos) - 1);
     } else {
       this.movePos((this.position + 1) % this.totalSlides);
