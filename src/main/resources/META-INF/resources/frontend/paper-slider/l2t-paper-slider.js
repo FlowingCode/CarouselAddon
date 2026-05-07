@@ -543,7 +543,7 @@ Polymer$0({
     const activeEl = this.shadowRoot && this.shadowRoot.activeElement;
     if (activeEl) {
       const nextPos = activeEl.getAttribute('aria-posinset');
-      if (nextPos) this.movePos(parseInt(nextPos) - 1);
+      if (nextPos) this.movePos(Number.parseInt(nextPos, 10) - 1);
     } else {
       this.movePos((this.position + 1) % this.totalSlides);
     }
