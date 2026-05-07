@@ -375,7 +375,9 @@ Polymer$0({
       for (var i = 0; i < dotElems.length; i++) {
         dotElems[i].setAttribute("aria-checked", "false");
       };
-      dotElems[this.position].setAttribute("aria-checked", "true");
+      if (this.position < dotElems.length) {
+        dotElems[this.position].setAttribute("aria-checked", "true");
+      }
     }
   },
 
